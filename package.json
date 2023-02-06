@@ -79,7 +79,7 @@
     "*.d.ts"
   ],
   "engines": {
-    "node": ">=14"
+    "node": ">=v14.21.2"
   },
   "scripts": {
     "build": "tsup",
