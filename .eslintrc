@@ -1,0 +1,6 @@
+{
+  "extends": ["@antfu"],
+  "rules": {
+    "react/jsx-no-undef": "off"
+  }
+}
