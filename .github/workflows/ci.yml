@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  vue:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
