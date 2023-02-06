@@ -1,6 +1,6 @@
 {
   "name": "unplugin-auto-import-api",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "Auto import APIs on-demand for Vite, Webpack and Rollup",
   "author": "Elone Hoo <hi@elonehoo.me>",
@@ -88,7 +88,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "play":"pnpm -C playground run dev",
+    "play": "pnpm -C playground run dev",
     "start": "esno src/index.ts",
     "test": "vitest"
   },
