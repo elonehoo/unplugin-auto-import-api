@@ -13,6 +13,74 @@
     "rollup-plugin",
     "astro-plugin"
   ],
+  "peerDependencies": {
+    "@vueuse/core": "*"
+  },
+  "peerDependenciesMeta": {
+    "@vueuse/core": {
+      "optional": true
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./*": "./*",
+    "./nuxt": {
+      "types": "./dist/nuxt.d.ts",
+      "require": "./dist/nuxt.cjs",
+      "import": "./dist/nuxt.js"
+    },
+    "./astro": {
+      "types": "./dist/astro.d.ts",
+      "require": "./dist/astro.cjs",
+      "import": "./dist/astro.js"
+    },
+    "./rollup": {
+      "types": "./dist/rollup.d.ts",
+      "require": "./dist/rollup.cjs",
+      "import": "./dist/rollup.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "require": "./dist/vite.cjs",
+      "import": "./dist/vite.js"
+    },
+    "./webpack": {
+      "types": "./dist/webpack.d.ts",
+      "require": "./dist/webpack.cjs",
+      "import": "./dist/webpack.js"
+    },
+    "./esbuild": {
+      "types": "./dist/esbuild.d.ts",
+      "require": "./dist/esbuild.cjs",
+      "import": "./dist/esbuild.js"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch src",
@@ -20,9 +88,12 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "start": "esno src/index.ts"
+    "start": "esno src/index.ts",
+    "test": "vitest"
   },
   "dependencies": {
+    "@antfu/utils": "^0.7.2",
+    "@nuxt/kit": "^3.1.2",
     "@rollup/pluginutils": "^5.0.2",
     "local-pkg": "^0.4.3",
     "magic-string": "^0.27.0",
@@ -31,8 +102,10 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.1",
+    "@nuxt/schema": "^3.1.2",
     "@types/node": "^18.11.19",
     "@types/resolve": "^1.20.2",
+    "@vueuse/metadata": "^9.12.0",
     "bumpp": "^8.2.1",
     "eslint": "^8.33.0",
     "esno": "^0.16.3",
