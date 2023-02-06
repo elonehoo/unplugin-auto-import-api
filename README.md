@@ -1,5 +1,7 @@
 # unplugin-auto-import-api-api
 
+[![NPM version](https://img.shields.io/npm/v/unplugin-auto-import-api-api?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-auto-import-api-api)
+
 Auto import APIs on-demand for Vite, Webpack and Rollup
 
 ---
