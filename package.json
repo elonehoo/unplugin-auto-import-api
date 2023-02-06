@@ -1,6 +1,7 @@
 {
   "name": "unplugin-auto-import-api",
   "version": "0.0.0",
+  "type": "module",
   "description": "Auto import APIs on-demand for Vite, Webpack and Rollup",
   "author": "Elone Hoo <hi@elonehoo.me>",
   "license": "MIT",
