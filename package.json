@@ -79,7 +79,7 @@
     "*.d.ts"
   ],
   "engines": {
-    "node": ">=14"
+    "node": ">=v14.21.3"
   },
   "scripts": {
     "build": "tsup",
@@ -94,28 +94,28 @@
   },
   "dependencies": {
     "@antfu/utils": "^0.7.2",
-    "@nuxt/kit": "^3.1.2",
+    "@nuxt/kit": "^3.2.2",
     "@rollup/pluginutils": "^5.0.2",
     "local-pkg": "^0.4.3",
-    "magic-string": "^0.27.0",
-    "unimport": "^2.1.0",
-    "unplugin": "^1.0.1"
+    "magic-string": "^0.29.0",
+    "unimport": "^2.2.4",
+    "unplugin": "^1.1.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.35.1",
-    "@nuxt/schema": "^3.1.2",
-    "@types/node": "^18.11.19",
+    "@antfu/eslint-config": "^0.35.2",
+    "@nuxt/schema": "^3.2.2",
+    "@types/node": "^18.14.0",
     "@types/resolve": "^1.20.2",
-    "@vueuse/metadata": "^9.12.0",
+    "@vueuse/metadata": "^9.13.0",
     "bumpp": "^8.2.1",
-    "eslint": "^8.33.0",
+    "eslint": "^8.34.0",
     "esno": "^0.16.3",
     "fast-glob": "^3.2.12",
-    "rollup": "^3.14.0",
-    "tsup": "^6.5.0",
+    "rollup": "^3.17.1",
+    "tsup": "^6.6.3",
     "typescript": "^4.9.5",
-    "vite": "^4.1.1",
-    "vitest": "^0.28.4",
+    "vite": "^4.1.2",
+    "vitest": "^0.28.5",
     "webpack": "^5.75.0"
   }
 }
