@@ -1,6 +1,6 @@
 import type { Arrayable, Awaitable } from '@antfu/utils'
 import type { FilterPattern } from '@rollup/pluginutils'
-import type { Import } from 'unimport'
+import type { Import, InlinePreset } from 'unimport'
 import { PresetName } from './presets'
 
 export interface ImportLegacy {
@@ -76,7 +76,7 @@ export interface Options {
    *
    * @default []
    */
-  imports?: Arrayable<ImportsMap | PresetName>
+  imports?: Arrayable<ImportsMap | PresetName | InlinePreset>
 
   /**
    * Identifiers to be ignored
@@ -105,6 +105,16 @@ export interface Options {
   dts?: string | boolean
 
   /**
+   * Cache the result of resolving, across multiple vite builds.
+   *
+   * A custom path is supported.
+   * When set to `true`, the cache will be stored in `node_modules/.cache/unplugin-auto-import.json`.
+   *
+   * @default false
+   */
+  cache?: string | boolean
+
+  /**
    * Auto import inside Vue templates
    *
    * @see https://github.com/unjs/unimport/pull/15
@@ -121,13 +131,6 @@ export interface Options {
   defaultExportByFilename?: boolean
 
   /**
-   * Allow overriding imports sources from multiple presets.
-   *
-   * @default false
-   */
-  presetOverriding?: boolean
-
-  /**
    * Rules to include transforming target.
    *
    * @default [/\.[jt]sx?$/, /\.vue\??/]
@@ -140,13 +143,6 @@ export interface Options {
    * @default [/node_modules/, /\.git/]
    */
   exclude?: FilterPattern
-
-  /**
-   * Generate source map.
-   *
-   * @default false
-   */
-  sourceMap?: boolean
 
   /**
    * Generate corresponding .eslintrc-auto-import.json file.

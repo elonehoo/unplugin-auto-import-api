@@ -1,3 +1,5 @@
+import minimatch from 'minimatch'
+import { slash } from '@antfu/utils'
 import { createUnplugin } from 'unplugin'
 import type { Options } from '../types'
 import { createContext } from './ctx'
@@ -14,14 +16,18 @@ export default createUnplugin<Options>((options) => {
       return ctx.transform(code, id)
     },
     async buildStart() {
-      await ctx.scanDirs()
+      await Promise.all([
+        ctx.scanDirs(),
+        ctx.updateCacheImports(),
+      ])
+      await ctx.writeConfigFiles()
     },
     async buildEnd() {
       await ctx.writeConfigFiles()
     },
     vite: {
       async handleHotUpdate({ file }) {
-        if (ctx.dirs?.some(dir => file.startsWith(dir)))
+        if (ctx.dirs?.some(glob => minimatch(slash(file), glob)))
           await ctx.scanDirs()
       },
       async configResolved(config) {
