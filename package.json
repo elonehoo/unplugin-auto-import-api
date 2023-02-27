@@ -107,7 +107,7 @@
     "@types/node": "^18.14.2",
     "@types/resolve": "^1.20.2",
     "@vueuse/metadata": "^9.13.0",
-    "bumpp": "^8.2.1",
+    "bumpp": "^9.0.0",
     "eslint": "^8.35.0",
     "esno": "^0.16.3",
     "fast-glob": "^3.2.12",
